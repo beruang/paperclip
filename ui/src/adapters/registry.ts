@@ -9,6 +9,7 @@ import { piLocalUIAdapter } from "./pi-local";
 import { openClawGatewayUIAdapter } from "./openclaw-gateway";
 import { glmUIAdapter } from "./glm";
 import { bytesPlusUIAdapter } from "./bytesplus";
+import { gitHubCopilotUIAdapter } from "./github-copilot";
 import { processUIAdapter } from "./process";
 import { httpUIAdapter } from "./http";
 
@@ -23,6 +24,7 @@ const uiAdapters: UIAdapterModule[] = [
   openClawGatewayUIAdapter,
   glmUIAdapter,
   bytesPlusUIAdapter,
+  gitHubCopilotUIAdapter,
   processUIAdapter,
   httpUIAdapter,
 ];

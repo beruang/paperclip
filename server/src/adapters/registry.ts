@@ -96,6 +96,15 @@ import {
   agentConfigurationDoc as bytesPlusAgentConfigurationDoc,
   models as bytesPlusModels,
 } from "@paperclipai/adapter-bytesplus";
+import {
+  execute as gitHubCopilotExecute,
+  testEnvironment as gitHubCopilotTestEnvironment,
+  sessionCodec as gitHubCopilotSessionCodec,
+} from "@paperclipai/adapter-github-copilot/server";
+import {
+  agentConfigurationDoc as gitHubCopilotAgentConfigurationDoc,
+  models as gitHubCopilotModels,
+} from "@paperclipai/adapter-github-copilot";
 import { processAdapter } from "./process/index.js";
 import { httpAdapter } from "./http/index.js";
 
@@ -225,6 +234,16 @@ const bytesPlusAdapter: ServerAdapterModule = {
   agentConfigurationDoc: bytesPlusAgentConfigurationDoc,
 };
 
+const gitHubCopilotAdapter: ServerAdapterModule = {
+  type: "github_copilot",
+  execute: gitHubCopilotExecute,
+  testEnvironment: gitHubCopilotTestEnvironment,
+  sessionCodec: gitHubCopilotSessionCodec,
+  models: gitHubCopilotModels,
+  supportsLocalAgentJwt: false,
+  agentConfigurationDoc: gitHubCopilotAgentConfigurationDoc,
+};
+
 const adaptersByType = new Map<string, ServerAdapterModule>(
   [
     claudeLocalAdapter,
@@ -237,6 +256,7 @@ const adaptersByType = new Map<string, ServerAdapterModule>(
     hermesLocalAdapter,
     glmAdapter,
     bytesPlusAdapter,
+    gitHubCopilotAdapter,
     processAdapter,
     httpAdapter,
   ].map((a) => [a.type, a]),
