@@ -10,6 +10,7 @@ import { openClawGatewayUIAdapter } from "./openclaw-gateway";
 import { glmUIAdapter } from "./glm";
 import { bytesPlusUIAdapter } from "./bytesplus";
 import { gitHubCopilotUIAdapter } from "./github-copilot";
+import { minimaxUIAdapter } from "./minimax";
 import { processUIAdapter } from "./process";
 import { httpUIAdapter } from "./http";
 
@@ -25,6 +26,7 @@ const uiAdapters: UIAdapterModule[] = [
   glmUIAdapter,
   bytesPlusUIAdapter,
   gitHubCopilotUIAdapter,
+  minimaxUIAdapter,
   processUIAdapter,
   httpUIAdapter,
 ];

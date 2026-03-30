@@ -9,6 +9,7 @@ import { printOpenClawGatewayStreamEvent } from "@paperclipai/adapter-openclaw-g
 import { printGlmStreamEvent } from "@paperclipai/adapter-glm/cli";
 import { printBytesPlusStreamEvent } from "@paperclipai/adapter-bytesplus/cli";
 import { printGitHubCopilotStreamEvent } from "@paperclipai/adapter-github-copilot/cli";
+import { printMinimaxStreamEvent } from "@paperclipai/adapter-minimax/cli";
 import { processCLIAdapter } from "./process/index.js";
 import { httpCLIAdapter } from "./http/index.js";
 
@@ -62,6 +63,11 @@ const gitHubCopilotCLIAdapter: CLIAdapterModule = {
   formatStdoutEvent: printGitHubCopilotStreamEvent,
 };
 
+const minimaxCLIAdapter: CLIAdapterModule = {
+  type: "minimax",
+  formatStdoutEvent: printMinimaxStreamEvent,
+};
+
 const adaptersByType = new Map<string, CLIAdapterModule>(
   [
     claudeLocalCLIAdapter,
@@ -74,6 +80,7 @@ const adaptersByType = new Map<string, CLIAdapterModule>(
     glmCLIAdapter,
     bytesPlusCLIAdapter,
     gitHubCopilotCLIAdapter,
+    minimaxCLIAdapter,
     processCLIAdapter,
     httpCLIAdapter,
   ].map((a) => [a.type, a]),

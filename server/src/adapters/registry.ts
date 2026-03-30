@@ -105,6 +105,15 @@ import {
   agentConfigurationDoc as gitHubCopilotAgentConfigurationDoc,
   models as gitHubCopilotModels,
 } from "@paperclipai/adapter-github-copilot";
+import {
+  execute as minimaxExecute,
+  testEnvironment as minimaxTestEnvironment,
+  sessionCodec as minimaxSessionCodec,
+} from "@paperclipai/adapter-minimax/server";
+import {
+  agentConfigurationDoc as minimaxAgentConfigurationDoc,
+  models as minimaxModels,
+} from "@paperclipai/adapter-minimax";
 import { processAdapter } from "./process/index.js";
 import { httpAdapter } from "./http/index.js";
 
@@ -244,6 +253,16 @@ const gitHubCopilotAdapter: ServerAdapterModule = {
   agentConfigurationDoc: gitHubCopilotAgentConfigurationDoc,
 };
 
+const minimaxAdapter: ServerAdapterModule = {
+  type: "minimax",
+  execute: minimaxExecute,
+  testEnvironment: minimaxTestEnvironment,
+  sessionCodec: minimaxSessionCodec,
+  models: minimaxModels,
+  supportsLocalAgentJwt: false,
+  agentConfigurationDoc: minimaxAgentConfigurationDoc,
+};
+
 const adaptersByType = new Map<string, ServerAdapterModule>(
   [
     claudeLocalAdapter,
@@ -257,6 +276,7 @@ const adaptersByType = new Map<string, ServerAdapterModule>(
     glmAdapter,
     bytesPlusAdapter,
     gitHubCopilotAdapter,
+    minimaxAdapter,
     processAdapter,
     httpAdapter,
   ].map((a) => [a.type, a]),
