@@ -9,6 +9,8 @@ import { ChoosePathButton } from "../../components/PathInstructionsModal";
 
 const inputClass =
   "w-full rounded-md border border-border px-2.5 py-1.5 bg-transparent outline-none text-sm font-mono placeholder:text-muted-foreground/40";
+const selectClass =
+  "w-full rounded-md border border-border px-2.5 py-1.5 bg-transparent outline-none text-sm font-mono appearance-none cursor-pointer";
 const instructionsFileHint =
   "Absolute path to a markdown file (e.g. AGENTS.md) that defines this agent's behavior. Injected into the system prompt at runtime.";
 
@@ -56,8 +58,13 @@ export function GlmConfigFields({
   config,
   eff,
   mark,
+  models,
   hideInstructionsFile,
 }: AdapterConfigFieldsProps) {
+  const currentModel = isCreate
+    ? (values!.model as string) ?? ""
+    : eff("adapterConfig", "model", String(config.model ?? ""));
+
   return (
     <>
       <SecretField
@@ -75,6 +82,24 @@ export function GlmConfigFields({
         }
         placeholder="your-glm-api-key"
       />
+      <Field label="Model" hint="Select the GLM model to use.">
+        <select
+          value={currentModel}
+          onChange={(e) =>
+            isCreate
+              ? set!({ model: e.target.value })
+              : mark("adapterConfig", "model", e.target.value || undefined)
+          }
+          className={selectClass}
+        >
+          <option value="">Select model…</option>
+          {models.map((m) => (
+            <option key={m.id} value={m.id}>
+              {m.label}
+            </option>
+          ))}
+        </select>
+      </Field>
       {!hideInstructionsFile && (
         <Field label="Agent instructions file" hint={instructionsFileHint}>
           <div className="flex items-center gap-2">

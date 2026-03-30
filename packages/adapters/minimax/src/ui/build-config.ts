@@ -1,9 +1,11 @@
-import type { CreateConfigValues } from "@paperclipai/shared";
+import type { CreateConfigValues } from "@paperclipai/adapter-utils";
 
-export function buildDefaultConfig(): Partial<CreateConfigValues> {
-  return {
-    adapterType: "minimax",
-    model: "MiniMax-Text-01",
-    systemPrompt: "",
-  };
+export function buildMinimaxConfig(v: CreateConfigValues): Record<string, unknown> {
+  const ac: Record<string, unknown> = {};
+  if (v.cwd) ac.cwd = v.cwd;
+  if (v.promptTemplate) ac.promptTemplate = v.promptTemplate;
+  if (v.model) ac.model = v.model;
+  if ((v as Record<string, unknown>).apiKey) ac.apiKey = (v as Record<string, unknown>).apiKey;
+  ac.timeoutSec = 300;
+  return ac;
 }
