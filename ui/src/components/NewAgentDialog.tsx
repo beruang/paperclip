@@ -31,7 +31,11 @@ type AdvancedAdapterType =
   | "pi_local"
   | "cursor"
   | "openclaw_gateway"
-  | "hermes_local";
+  | "hermes_local"
+  | "glm"
+  | "bytesplus"
+  | "github_copilot"
+  | "minimax";
 
 const ADVANCED_ADAPTER_OPTIONS: Array<{
   value: AdvancedAdapterType;
@@ -89,6 +93,30 @@ const ADVANCED_ADAPTER_OPTIONS: Array<{
     label: "OpenClaw Gateway",
     icon: Bot,
     desc: "Invoke OpenClaw via gateway protocol",
+  },
+  {
+    value: "glm",
+    label: "GLM (Zhipu AI)",
+    icon: Sparkles,
+    desc: "Zhipu AI GLM models via API",
+  },
+  {
+    value: "bytesplus",
+    label: "BytesPlus",
+    icon: Sparkles,
+    desc: "ByteDance Doubao models via API",
+  },
+  {
+    value: "github_copilot",
+    label: "GitHub Copilot",
+    icon: Code,
+    desc: "GitHub Copilot models via API",
+  },
+  {
+    value: "minimax",
+    label: "MiniMax",
+    icon: Sparkles,
+    desc: "MiniMax AI models via API",
   },
 ];
 
