@@ -7,6 +7,7 @@ import { printOpenCodeStreamEvent } from "@paperclipai/adapter-opencode-local/cl
 import { printPiStreamEvent } from "@paperclipai/adapter-pi-local/cli";
 import { printOpenClawGatewayStreamEvent } from "@paperclipai/adapter-openclaw-gateway/cli";
 import { printGlmStreamEvent } from "@paperclipai/adapter-glm/cli";
+import { printBytesPlusStreamEvent } from "@paperclipai/adapter-bytesplus/cli";
 import { processCLIAdapter } from "./process/index.js";
 import { httpCLIAdapter } from "./http/index.js";
 
@@ -50,6 +51,11 @@ const glmCLIAdapter: CLIAdapterModule = {
   formatStdoutEvent: printGlmStreamEvent,
 };
 
+const bytesPlusCLIAdapter: CLIAdapterModule = {
+  type: "bytesplus",
+  formatStdoutEvent: printBytesPlusStreamEvent,
+};
+
 const adaptersByType = new Map<string, CLIAdapterModule>(
   [
     claudeLocalCLIAdapter,
@@ -60,6 +66,7 @@ const adaptersByType = new Map<string, CLIAdapterModule>(
     geminiLocalCLIAdapter,
     openclawGatewayCLIAdapter,
     glmCLIAdapter,
+    bytesPlusCLIAdapter,
     processCLIAdapter,
     httpCLIAdapter,
   ].map((a) => [a.type, a]),

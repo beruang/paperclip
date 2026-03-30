@@ -8,6 +8,7 @@ import { openCodeLocalUIAdapter } from "./opencode-local";
 import { piLocalUIAdapter } from "./pi-local";
 import { openClawGatewayUIAdapter } from "./openclaw-gateway";
 import { glmUIAdapter } from "./glm";
+import { bytesPlusUIAdapter } from "./bytesplus";
 import { processUIAdapter } from "./process";
 import { httpUIAdapter } from "./http";
 
@@ -21,6 +22,7 @@ const uiAdapters: UIAdapterModule[] = [
   cursorLocalUIAdapter,
   openClawGatewayUIAdapter,
   glmUIAdapter,
+  bytesPlusUIAdapter,
   processUIAdapter,
   httpUIAdapter,
 ];

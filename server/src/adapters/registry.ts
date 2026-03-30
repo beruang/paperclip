@@ -87,6 +87,15 @@ import {
   agentConfigurationDoc as glmAgentConfigurationDoc,
   models as glmModels,
 } from "@paperclipai/adapter-glm";
+import {
+  execute as bytesPlusExecute,
+  testEnvironment as bytesPlusTestEnvironment,
+  sessionCodec as bytesPlusSessionCodec,
+} from "@paperclipai/adapter-bytesplus/server";
+import {
+  agentConfigurationDoc as bytesPlusAgentConfigurationDoc,
+  models as bytesPlusModels,
+} from "@paperclipai/adapter-bytesplus";
 import { processAdapter } from "./process/index.js";
 import { httpAdapter } from "./http/index.js";
 
@@ -206,6 +215,16 @@ const glmAdapter: ServerAdapterModule = {
   agentConfigurationDoc: glmAgentConfigurationDoc,
 };
 
+const bytesPlusAdapter: ServerAdapterModule = {
+  type: "bytesplus",
+  execute: bytesPlusExecute,
+  testEnvironment: bytesPlusTestEnvironment,
+  sessionCodec: bytesPlusSessionCodec,
+  models: bytesPlusModels,
+  supportsLocalAgentJwt: false,
+  agentConfigurationDoc: bytesPlusAgentConfigurationDoc,
+};
+
 const adaptersByType = new Map<string, ServerAdapterModule>(
   [
     claudeLocalAdapter,
@@ -217,6 +236,7 @@ const adaptersByType = new Map<string, ServerAdapterModule>(
     openclawGatewayAdapter,
     hermesLocalAdapter,
     glmAdapter,
+    bytesPlusAdapter,
     processAdapter,
     httpAdapter,
   ].map((a) => [a.type, a]),
