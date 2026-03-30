@@ -34,6 +34,9 @@ importers:
       '@clack/prompts':
         specifier: ^0.10.0
         version: 0.10.1
+      '@paperclipai/adapter-bytesplus':
+        specifier: workspace:*
+        version: link:../packages/adapters/bytesplus
       '@paperclipai/adapter-claude-local':
         specifier: workspace:*
         version: link:../packages/adapters/claude-local
@@ -46,6 +49,15 @@ importers:
       '@paperclipai/adapter-gemini-local':
         specifier: workspace:*
         version: link:../packages/adapters/gemini-local
+      '@paperclipai/adapter-github-copilot':
+        specifier: workspace:*
+        version: link:../packages/adapters/github-copilot
+      '@paperclipai/adapter-glm':
+        specifier: workspace:*
+        version: link:../packages/adapters/glm
+      '@paperclipai/adapter-minimax':
+        specifier: workspace:*
+        version: link:../packages/adapters/minimax
       '@paperclipai/adapter-openclaw-gateway':
         specifier: workspace:*
         version: link:../packages/adapters/openclaw-gateway
@@ -504,6 +516,9 @@ importers:
       '@aws-sdk/client-s3':
         specifier: ^3.888.0
         version: 3.994.0
+      '@paperclipai/adapter-bytesplus':
+        specifier: workspace:*
+        version: link:../packages/adapters/bytesplus
       '@paperclipai/adapter-claude-local':
         specifier: workspace:*
         version: link:../packages/adapters/claude-local
@@ -516,6 +531,15 @@ importers:
       '@paperclipai/adapter-gemini-local':
         specifier: workspace:*
         version: link:../packages/adapters/gemini-local
+      '@paperclipai/adapter-github-copilot':
+        specifier: workspace:*
+        version: link:../packages/adapters/github-copilot
+      '@paperclipai/adapter-glm':
+        specifier: workspace:*
+        version: link:../packages/adapters/glm
+      '@paperclipai/adapter-minimax':
+        specifier: workspace:*
+        version: link:../packages/adapters/minimax
       '@paperclipai/adapter-openclaw-gateway':
         specifier: workspace:*
         version: link:../packages/adapters/openclaw-gateway
@@ -658,6 +682,9 @@ importers:
       '@mdxeditor/editor':
         specifier: ^3.52.4
         version: 3.52.4(@codemirror/language@6.12.1)(@lezer/highlight@1.2.3)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(yjs@13.6.29)
+      '@paperclipai/adapter-bytesplus':
+        specifier: workspace:*
+        version: link:../packages/adapters/bytesplus
       '@paperclipai/adapter-claude-local':
         specifier: workspace:*
         version: link:../packages/adapters/claude-local
@@ -670,6 +697,15 @@ importers:
       '@paperclipai/adapter-gemini-local':
         specifier: workspace:*
         version: link:../packages/adapters/gemini-local
+      '@paperclipai/adapter-github-copilot':
+        specifier: workspace:*
+        version: link:../packages/adapters/github-copilot
+      '@paperclipai/adapter-glm':
+        specifier: workspace:*
+        version: link:../packages/adapters/glm
+      '@paperclipai/adapter-minimax':
+        specifier: workspace:*
+        version: link:../packages/adapters/minimax
       '@paperclipai/adapter-openclaw-gateway':
         specifier: workspace:*
         version: link:../packages/adapters/openclaw-gateway
