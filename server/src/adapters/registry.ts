@@ -78,6 +78,15 @@ import {
   agentConfigurationDoc as hermesAgentConfigurationDoc,
   models as hermesModels,
 } from "hermes-paperclip-adapter";
+import {
+  execute as glmExecute,
+  testEnvironment as glmTestEnvironment,
+  sessionCodec as glmSessionCodec,
+} from "@paperclipai/adapter-glm/server";
+import {
+  agentConfigurationDoc as glmAgentConfigurationDoc,
+  models as glmModels,
+} from "@paperclipai/adapter-glm";
 import { processAdapter } from "./process/index.js";
 import { httpAdapter } from "./http/index.js";
 
@@ -187,6 +196,16 @@ const hermesLocalAdapter: ServerAdapterModule = {
   detectModel: () => detectModelFromHermes(),
 };
 
+const glmAdapter: ServerAdapterModule = {
+  type: "glm",
+  execute: glmExecute,
+  testEnvironment: glmTestEnvironment,
+  sessionCodec: glmSessionCodec,
+  models: glmModels,
+  supportsLocalAgentJwt: false,
+  agentConfigurationDoc: glmAgentConfigurationDoc,
+};
+
 const adaptersByType = new Map<string, ServerAdapterModule>(
   [
     claudeLocalAdapter,
@@ -197,6 +216,7 @@ const adaptersByType = new Map<string, ServerAdapterModule>(
     geminiLocalAdapter,
     openclawGatewayAdapter,
     hermesLocalAdapter,
+    glmAdapter,
     processAdapter,
     httpAdapter,
   ].map((a) => [a.type, a]),
