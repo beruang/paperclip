@@ -2,13 +2,12 @@ export const type = "bytesplus";
 export const label = "BytesPlus (ByteDance)";
 
 export const models: Array<{ id: string; label: string }> = [
-  { id: "doubao-pro-256k", label: "Doubao Pro 256K" },
-  { id: "doubao-pro-128k", label: "Doubao Pro 128K" },
-  { id: "doubao-pro-32k", label: "Doubao Pro 32K" },
-  { id: "doubao-pro-4k", label: "Doubao Pro 4K" },
-  { id: "doubao-lite-128k", label: "Doubao Lite 128K" },
-  { id: "doubao-lite-32k", label: "Doubao Lite 32K" },
-  { id: "doubao-lite-4k", label: "Doubao Lite 4K" },
+  { id: "dola-seed-2.0-pro", label: "Dola Seed 2.0 Pro" },
+  { id: "dola-seed-2.0-lite", label: "Dola Seed 2.0 Lite" },
+  { id: "bytedance-seed-code", label: "ByteDance Seed Code" },
+  { id: "glm-4.7", label: "GLM-4.7" },
+  { id: "kimi-k2.5", label: "Kimi K2.5" },
+  { id: "gpt-oss-120b", label: "GPT-OSS 120B" },
 ];
 
 export const agentConfigurationDoc = `# bytesplus agent configuration

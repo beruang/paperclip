@@ -2,13 +2,11 @@ export const type = "glm";
 export const label = "GLM (Zhipu AI)";
 
 export const models: Array<{ id: string; label: string }> = [
-  { id: "glm-4-plus", label: "GLM-4-Plus" },
-  { id: "glm-4-long", label: "GLM-4-Long" },
-  { id: "glm-4-flash", label: "GLM-4-Flash" },
-  { id: "glm-4-flashx", label: "GLM-4-FlashX" },
-  { id: "glm-4-air", label: "GLM-4-Air" },
-  { id: "glm-4-airx", label: "GLM-4-AirX" },
-  { id: "glm-4", label: "GLM-4" },
+  { id: "glm-5.1", label: "GLM-5.1" },
+  { id: "glm-5-turbo", label: "GLM-5-Turbo" },
+  { id: "glm-4.7", label: "GLM-4.7" },
+  { id: "glm-4.6", label: "GLM-4.6" },
+  { id: "glm-4.5-air", label: "GLM-4.5-Air" },
 ];
 
 export const agentConfigurationDoc = `# glm agent configuration

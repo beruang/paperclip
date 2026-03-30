@@ -2,10 +2,13 @@ export const type = "minimax";
 export const label = "MiniMax";
 
 export const models: Array<{ id: string; label: string }> = [
-  { id: "MiniMax-Text-01", label: "MiniMax-Text-01" },
-  { id: "abab6.5s-chat", label: "abab6.5s Chat" },
-  { id: "abab6.5-chat", label: "abab6.5 Chat" },
-  { id: "abab5.5-chat", label: "abab5.5 Chat" },
+  { id: "M2.7", label: "M2.7" },
+  { id: "M2.7-highspeed", label: "M2.7 Highspeed" },
+  { id: "Speech-2.8", label: "Speech 2.8" },
+  { id: "image-01", label: "Image-01" },
+  { id: "Hailuo-2.3-Fast-768P-6s", label: "Hailuo-2.3-Fast 768P 6s" },
+  { id: "Hailuo-2.3-768P-6s", label: "Hailuo-2.3 768P 6s" },
+  { id: "Music-2.5", label: "Music-2.5" },
 ];
 
 export const agentConfigurationDoc = `# minimax agent configuration

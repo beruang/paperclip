@@ -2,16 +2,23 @@ export const type = "github_copilot";
 export const label = "GitHub Copilot";
 
 export const models: Array<{ id: string; label: string }> = [
-  { id: "gpt-4o", label: "GPT-4o" },
-  { id: "gpt-4o-mini", label: "GPT-4o Mini" },
   { id: "gpt-4.1", label: "GPT-4.1" },
-  { id: "gpt-4.1-mini", label: "GPT-4.1 Mini" },
-  { id: "gpt-4.1-nano", label: "GPT-4.1 Nano" },
-  { id: "claude-3.5-sonnet", label: "Claude 3.5 Sonnet" },
-  { id: "claude-3.7-sonnet", label: "Claude 3.7 Sonnet" },
-  { id: "o3-mini", label: "o3-mini" },
-  { id: "o4-mini", label: "o4-mini" },
-  { id: "gemini-2.0-flash", label: "Gemini 2.0 Flash" },
+  { id: "gpt-5-mini", label: "GPT-5 Mini" },
+  { id: "gpt-5.2", label: "GPT-5.2" },
+  { id: "gpt-5.2-codex", label: "GPT-5.2-Codex" },
+  { id: "gpt-5.3-codex", label: "GPT-5.3-Codex" },
+  { id: "gpt-5.4", label: "GPT-5.4" },
+  { id: "gpt-5.4-mini", label: "GPT-5.4 Mini" },
+  { id: "claude-haiku-4.5", label: "Claude Haiku 4.5" },
+  { id: "claude-opus-4.5", label: "Claude Opus 4.5" },
+  { id: "claude-opus-4.6", label: "Claude Opus 4.6" },
+  { id: "claude-sonnet-4", label: "Claude Sonnet 4" },
+  { id: "claude-sonnet-4.5", label: "Claude Sonnet 4.5" },
+  { id: "claude-sonnet-4.6", label: "Claude Sonnet 4.6" },
+  { id: "gemini-2.5-pro", label: "Gemini 2.5 Pro" },
+  { id: "gemini-3-flash", label: "Gemini 3 Flash" },
+  { id: "gemini-3.1-pro", label: "Gemini 3.1 Pro" },
+  { id: "grok-code-fast-1", label: "Grok Code Fast 1" },
 ];
 
 export const agentConfigurationDoc = `# github_copilot agent configuration
